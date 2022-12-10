@@ -2,6 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-color: #181e30;
+  --typewriterSpeed: 3s;
+}
+
 html {
-  @apply text-yellow-50
+  @apply text-yellow-50;
+}
+
+#typewriter:after,
+#typewriter:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+#typewriter:before {
+  background: var(--bg-color);
+  animation: typewriter var(--typewriterSpeed) steps(12) 1s forwards;
+}
+
+#typewriter:after {
+  width: 0.125em;
+  background-color: #f7b843;
+  animation: typewriter var(--typewriterSpeed) steps(12) 1s forwards,
+    blink 750ms steps(12) infinite;
+}
+
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.waitForWriter {
+  opacity: 0;
+  transform: translateY(3rem);
+  animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2s) forwards;
 }

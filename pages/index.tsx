@@ -18,12 +18,15 @@ export default function Home() {
         />
         {/* image with max width */}
         <div className="text-xl sm:text-3xl md:text-6xl sm:text-left min-w-12 text-center font-semibold m-auto flex-[3]">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-purple-600 to-blue-600">
+          <span
+            id="typewriter"
+            className="bg-clip-text m-0 relative font-mono text-transparent bg-gradient-to-r from-amber-400 via-purple-600 to-blue-600"
+          >
             Hello world!
           </span>
           <br />
-          Welcome to my website!
-          <BasicButton className="pt-2">Contact Me!</BasicButton>
+          <span className="waitForWriter">Welcome to my website!</span>
+          <BasicButton className="waitForWriter pt-2">Contact Me!</BasicButton>
         </div>
       </div>
     </div>
