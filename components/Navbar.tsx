@@ -3,7 +3,7 @@ import React from "react";
 
 export const Navbar = () => {
   return (
-    <nav className="border-gray-900-200 fixed w-screen px-2 sm:px-4 py-2.5 bg-gray-900 ">
+    <nav className="border-gray-900-200 fixed z-50 w-screen px-2 sm:px-4 py-2.5 bg-gray-900 ">
       <div className="container flex flex-wrap items-center justify-between mx-auto">
         <a href="https://flowbite.com/" className="flex items-center">
           <img

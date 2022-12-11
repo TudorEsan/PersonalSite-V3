@@ -51,10 +51,10 @@ export default function Home() {
             alt="An image with me!"
           />
           {/* image with max width */}
-          <div className="text-xl sm:text-3xl md:text-6xl sm:text-left min-w-12 text-center font-semibold m-auto flex-[3]">
+          <div className="text-3xl sm:text-3xl md:text-6xl sm:text-left min-w-12 text-center font-semibold m-auto flex-[3]">
             <span
               id="typewriter"
-              className="bg-clip-text m-0 relative font-mono text-transparent bg-gradient-to-r from-amber-400 via-purple-600 to-blue-600"
+              className="bg-clip-text whitespace-nowrap m-0 relative font-mono text-transparent bg-gradient-to-r from-amber-400 via-purple-600 to-blue-600"
             >
               Hello world!
             </span>
@@ -66,8 +66,9 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <section className="relative w-screen h-screen">
-        <div className="meDrawingContainer">
+      <section className="relative min-h-[450px]">
+        <h1 className="text-5xl text-center ">My Stack</h1>
+        <div className="meDrawingContainer mt-20 ">
           <div className="middleOrbitCenter">
             <div className="middleOrbit">
               <Icon src="/logoReact.png" alt="React Logo" />

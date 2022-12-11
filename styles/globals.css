@@ -97,8 +97,16 @@ html {
   object-fit: contain;
   border-radius: 100%;
   background-color: #4a437f;
-  
   animation: counterSpin 30s linear infinite;
+}
+
+@media only screen and (max-width: 380px) {
+  .middleOrbitCircle {
+    display: none;
+  }
+  .middleOrbit {
+    display: none;
+  }
 }
 
 .middleOrbitCircle:first-child {
@@ -125,9 +133,6 @@ html {
   top: 250px;
   left: 85px;
 }
-
-
-
 
 @keyframes spin-right {
   100% {
