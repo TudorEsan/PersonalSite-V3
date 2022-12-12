@@ -19,12 +19,16 @@ module.exports = {
     },
     extend: {
       colors: {
-        darkBlue: "#181E30",
+        darkBlue: "#04001f",
       },
       minWidth: {
         '220': "220px",
       },
+      backdropImage: {
+        // 'hero': "url('/images/hero.jpg')",
+      }
     },
+
   },
   plugins: [],
 };

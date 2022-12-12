@@ -1,46 +1,35 @@
 import Image from "next/image";
 import { BasicButton } from "../components/Buttons/BasicButton";
 import Spline from "@splinetool/react-spline";
-import { useEffect, useRef } from "react";
+import { LegacyRef, useEffect, useRef } from "react";
 import { Application } from "@splinetool/runtime";
+import Wave from "react-wavify";
+import { useParallax } from "react-scroll-parallax";
+import { TypeAnimation } from "react-type-animation";
 
 export default function Home() {
-  const splineRef = useRef<Application | null>(null);
-
-  const onLoad = (spline: Application) => {
-    console.log("loaded", spline);
-    console.log(spline.findObjectByName("Head"));
-    // splineRef.current = spline;
-  };
-
-  // const lookAt = (x: number, y: number) => {
-  //   // make Head look at mouse even if it is outside the spline canvas
-  //   if (!splineRef.current) return;
-  //   const head = spline.current?.findObjectById("Head");
-  //   console.log(head);
-  // };
-
-  // useEffect(() => {
-  //   let mouseEventListener: null | ((e: MouseEvent) => void) = null;
-  //   console.log(window);
-  //   window.addEventListener("mousemove", (e) => {
-  //     const x = e.clientX;
-  //     const y = e.clientY;
-  //     lookAt(x, y);
-  //   });
-  //   return () => {
-  //     if (mouseEventListener !== null) {
-  //       window.removeEventListener("mousemove", mouseEventListener);
-  //     }
-  //   };
-  // }, [spline]);
+  const parallax = useParallax<HTMLDivElement>({
+    speed: -10,
+  });
 
   return (
     <div>
-      <div className="h-screen w-screen flex align-middle justify-center">
+      <div className="h-screen w-screen flex align-middle justify-center bg">
+        <div
+          ref={parallax.ref}
+          className="absolute top-0 left-0 w-full h-full object-cover blur-sm"
+        >
+          <Image
+            className=""
+            src="/homeBackground.jpg"
+            fill
+            alt="Background"
+            priority
+          />
+        </div>
         <div className="flex flex-wrap p-5 justify-center align-middle gap-12 max-w-6xl m-auto">
           <Image
-            className="flex-[2] max-h-80"
+            className="flex-[2] max-h-80 relative z-1"
             src="/Me.png"
             style={{
               objectFit: "contain",
@@ -52,21 +41,20 @@ export default function Home() {
           />
           {/* image with max width */}
           <div className="text-3xl sm:text-3xl md:text-6xl sm:text-left min-w-12 text-center font-semibold m-auto flex-[3]">
-            <span
-              id="typewriter"
-              className="bg-clip-text whitespace-nowrap m-0 relative font-mono text-transparent bg-gradient-to-r from-amber-400 via-purple-600 to-blue-600"
-            >
-              Hello world!
-            </span>
+            <TypeAnimation
+              sequence={["Hello World!", 1000]}
+              speed={1}
+              cursor={true}
+              wrapper="span"
+              className="relative text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-purple-600 to-blue-600"
+            />
             <br />
-            <span className="waitForWriter">Welcome to my website!</span>
-            <BasicButton className="waitForWriter pt-2">
-              Contact Me!
-            </BasicButton>
+            <span className="relative">Welcome to my website!</span>
+            <BasicButton className=" pt-2">Contact Me!</BasicButton>
           </div>
         </div>
       </div>
-      <section className="relative min-h-[450px]">
+      <section className="relative min-h-[450px] mt-20">
         <h1 className="text-5xl text-center ">My Stack</h1>
         <div className="meDrawingContainer mt-20 ">
           <div className="middleOrbitCenter">
@@ -87,6 +75,7 @@ export default function Home() {
             height={60}
           />
         </div>
+
       </section>
     </div>
   );
