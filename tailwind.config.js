@@ -22,13 +22,15 @@ module.exports = {
         darkBlue: "#04001f",
       },
       minWidth: {
-        '220': "220px",
+        220: "220px",
       },
       backdropImage: {
         // 'hero': "url('/images/hero.jpg')",
-      }
+      },
+      boxShadow: {
+        border: "0 0 0 0.5px rgba(255, 255, 255, 0.2)",
+      },
     },
-
   },
   plugins: [],
 };
