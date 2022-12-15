@@ -20,7 +20,7 @@ export default function Home() {
       <section className="h-screen w-screen flex align-middle justify-center bg">
         <div className="absolute top-0 left-0 w-full h-full object-cover blur-sm">
           <Image
-            className=""
+            className="object-cover"
             src="/homeBackground.jpg"
             fill
             alt="Background"
@@ -37,6 +37,7 @@ export default function Home() {
             style={{
               objectFit: "contain",
             }}
+            priority
             quality={100}
             height={500}
             width={500}
@@ -86,7 +87,7 @@ const Icon = ({ src, alt }: { src: string; alt: string }) => {
 const StackSection = () => {
   return (
     <>
-      <section className="relative">
+      <section className="relative overflow-hidden">
         <BlobAnimation />
         <div className="relative overflow-hidden min-h-[450px] mt-20 z-[2] p-5 sm:p-10">
           <Card className="m-auto">
