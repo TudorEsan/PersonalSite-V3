@@ -8,6 +8,7 @@ import { useParallax } from "react-scroll-parallax";
 import { TypeAnimation } from "react-type-animation";
 import styles from "../styles/Home.module.css";
 import { Card } from "../components/Card";
+import { Chip } from "../components/Chip";
 
 export default function Home() {
   const parallax = useParallax<HTMLDivElement>({
@@ -85,10 +86,10 @@ const Icon = ({ src, alt }: { src: string; alt: string }) => {
 const StackSection = () => {
   return (
     <>
-      <BlobAnimation />
-      <section className="relative min-h-[450px] mt-20 z-[2]">
-        <Card>
-          <div className="meDrawingContainer m-20 ">
+      {/* <BlobAnimation /> */}
+      <section className="relative min-h-[450px] mt-20 z-[2] p-5 sm:p-10">
+        <Card className="m-auto">
+          <div className="meDrawingContainer my-[60px] ">
             <div className="middleOrbitCenter">
               <div className="middleOrbit">
                 <Icon src="/logoReact.png" alt="React Logo" />
@@ -100,14 +101,42 @@ const StackSection = () => {
             </div>
             <Image
               id="meDrawing"
-              className="relative w-40 m-auto"
+              className="relative m-auto"
               src="/meDrawing.png"
               alt=""
-              width={50}
-              height={60}
+              width={150}
+              height={150}
             />
           </div>
-            <h1 className="text-5xl text-center ">My Stack</h1>
+          <h1 className="text-4xl text-center mb-3">My Tech Stack</h1>
+          <p className="text-center leading-6 text-gray-400 text text-lg">
+            I am a junior full stack developer with a passion for learning new
+            technologies. I mainly specialize in JavaScript and Golang, but I am
+            always looking to learn new languages and frameworks.
+          </p>
+          <p className="mt-2 ml-2 text-sm">Backend Skills:</p>
+          {[
+            "Golang",
+            "JavaScript",
+            "Node.js",
+            "MongoDB",
+            "MongoDb",
+            "SQL",
+            "Redis",
+            "Docker",
+            "RabbitMq",
+            "GraphQl",
+          ].map((skill) => (
+            <Chip className="bg-indigo-700">{skill}</Chip>
+          ))}
+          <p className="mt-2 ml-2 text-sm">Frontend Skills:</p>
+          {["React", "Next.js", "Tailwind", "Material UI", "HTML", "CSS"].map(
+            (skill) => (
+              <Chip className="bg-violet-700">{skill}</Chip>
+            )
+          )}
+
+          {/* add chips to skills */}
         </Card>
       </section>
     </>

@@ -8,7 +8,11 @@
 }
 
 html {
-  @apply text-yellow-50;
+  @apply text-white/90
+}
+
+p {
+  @apply text-white/70
 }
 
 #typewriter:after,

@@ -20,6 +20,7 @@ module.exports = {
     extend: {
       colors: {
         darkBlue: "#04001f",
+        cardColor: '#1c1354'
       },
       minWidth: {
         220: "220px",
@@ -30,6 +31,28 @@ module.exports = {
       boxShadow: {
         border: "0 0 0 0.5px rgba(255, 255, 255, 0.2)",
       },
+      animation: {
+        grow: "growing 0.5s ease-in forwards",
+        raise: "raising 0.5s ease-out forwards",
+      },
+      keyframes: {
+        growing: {
+          '0%': {
+            transform: "scale(1)", 
+          },
+          '100%': {
+            transform: "scale(1.5)",
+          },
+        },
+        raising: {
+          '0%': {
+            transform: "translateY(0)",
+          },
+          '100%': {
+            transform: "translateY(-5px)",
+          },
+        },
+      }
     },
   },
   plugins: [],
