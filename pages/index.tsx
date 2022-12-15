@@ -86,58 +86,64 @@ const Icon = ({ src, alt }: { src: string; alt: string }) => {
 const StackSection = () => {
   return (
     <>
-      {/* <BlobAnimation /> */}
-      <section className="relative min-h-[450px] mt-20 z-[2] p-5 sm:p-10">
-        <Card className="m-auto">
-          <div className="meDrawingContainer my-[60px] ">
-            <div className="middleOrbitCenter">
-              <div className="middleOrbit">
-                <Icon src="/logoReact.png" alt="React Logo" />
-                <Icon src="/logoGolang.png" alt="React Logo" />
-                <Icon src="/mongoLogo.png" alt="React Logo" />
-                <Icon src="/logoJs.png" alt="React Logo" />
-                <Icon src="/logoNode.png" alt="React Logo" />
+      <section className="relative">
+        <BlobAnimation />
+        <div className="relative overflow-hidden min-h-[450px] mt-20 z-[2] p-5 sm:p-10">
+          <Card className="m-auto">
+            <div className="meDrawingContainer my-[60px] ">
+              <div className="middleOrbitCenter">
+                <div className="middleOrbit">
+                  <Icon src="/logoReact.png" alt="React Logo" />
+                  <Icon src="/logoGolang.png" alt="React Logo" />
+                  <Icon src="/mongoLogo.png" alt="React Logo" />
+                  <Icon src="/logoJs.png" alt="React Logo" />
+                  <Icon src="/logoNode.png" alt="React Logo" />
+                </div>
               </div>
+              <Image
+                id="meDrawing"
+                className="relative m-auto"
+                src="/meDrawing.png"
+                alt=""
+                width={150}
+                height={150}
+              />
             </div>
-            <Image
-              id="meDrawing"
-              className="relative m-auto"
-              src="/meDrawing.png"
-              alt=""
-              width={150}
-              height={150}
-            />
-          </div>
-          <h1 className="text-4xl text-center mb-3">My Tech Stack</h1>
-          <p className="text-center leading-6 text-gray-400 text text-lg">
-            I am a junior full stack developer with a passion for learning new
-            technologies. I mainly specialize in JavaScript and Golang, but I am
-            always looking to learn new languages and frameworks.
-          </p>
-          <p className="mt-2 ml-2 text-sm">Backend Skills:</p>
-          {[
-            "Golang",
-            "JavaScript",
-            "Node.js",
-            "MongoDB",
-            "MongoDb",
-            "SQL",
-            "Redis",
-            "Docker",
-            "RabbitMq",
-            "GraphQl",
-          ].map((skill) => (
-            <Chip key={skill} className="bg-indigo-700">{skill}</Chip>
-          ))}
-          <p className="mt-2 ml-2 text-sm">Frontend Skills:</p>
-          {["React", "Next.js", "Tailwind", "Material UI", "HTML", "CSS"].map(
-            (skill) => (
-              <Chip key={skill} className="bg-violet-700">{skill}</Chip>
-            )
-          )}
+            <h1 className="text-4xl text-center mb-3">My Tech Stack</h1>
+            <p className="text-center leading-6 text-gray-400 text text-lg">
+              I am a junior full stack developer with a passion for learning new
+              technologies. I mainly specialize in JavaScript and Golang, but I
+              am always looking to learn new languages and frameworks.
+            </p>
+            <p className="mt-2 ml-2 text-sm">Backend Skills:</p>
+            {[
+              "Golang",
+              "JavaScript",
+              "Node.js",
+              "MongoDB",
+              "MongoDb",
+              "SQL",
+              "Redis",
+              "Docker",
+              "RabbitMq",
+              "GraphQl",
+            ].map((skill) => (
+              <Chip key={skill} className="bg-indigo-700">
+                {skill}
+              </Chip>
+            ))}
+            <p className="mt-2 ml-2 text-sm">Frontend Skills:</p>
+            {["React", "Next.js", "Tailwind", "Material UI", "HTML", "CSS"].map(
+              (skill) => (
+                <Chip key={skill} className="bg-violet-700">
+                  {skill}
+                </Chip>
+              )
+            )}
 
-          {/* add chips to skills */}
-        </Card>
+            {/* add chips to skills */}
+          </Card>
+        </div>
       </section>
     </>
   );
