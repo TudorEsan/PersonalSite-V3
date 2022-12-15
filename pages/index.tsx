@@ -127,12 +127,12 @@ const StackSection = () => {
             "RabbitMq",
             "GraphQl",
           ].map((skill) => (
-            <Chip className="bg-indigo-700">{skill}</Chip>
+            <Chip key={skill} className="bg-indigo-700">{skill}</Chip>
           ))}
           <p className="mt-2 ml-2 text-sm">Frontend Skills:</p>
           {["React", "Next.js", "Tailwind", "Material UI", "HTML", "CSS"].map(
             (skill) => (
-              <Chip className="bg-violet-700">{skill}</Chip>
+              <Chip key={skill} className="bg-violet-700">{skill}</Chip>
             )
           )}
 
