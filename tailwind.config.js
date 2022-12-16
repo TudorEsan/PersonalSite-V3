@@ -20,7 +20,7 @@ module.exports = {
     extend: {
       colors: {
         darkBlue: "#04001f",
-        cardColor: '#1c1354'
+        cardColor: "#1c1354",
       },
       minWidth: {
         220: "220px",
@@ -34,25 +34,34 @@ module.exports = {
       animation: {
         grow: "growing 0.5s ease-in forwards",
         raise: "raising 0.5s ease-out forwards",
+        faideIn: "fadingIn 2s ease-in forwards",
       },
       keyframes: {
         growing: {
-          '0%': {
-            transform: "scale(1)", 
+          "0%": {
+            transform: "scale(1)",
           },
-          '100%': {
+          "100%": {
             transform: "scale(1.5)",
           },
         },
         raising: {
-          '0%': {
+          "0%": {
             transform: "translateY(0)",
           },
-          '100%': {
+          "100%": {
             transform: "translateY(-5px)",
           },
         },
-      }
+        fadingIn: {
+          "0%": {
+            opacity: 0,
+          },
+          "100%": {
+            opacity: 1,
+          },
+        },
+      },
     },
   },
   plugins: [],
