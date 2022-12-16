@@ -9,6 +9,8 @@ import { TypeAnimation } from "react-type-animation";
 import styles from "../styles/Home.module.css";
 import { Card } from "../components/Card";
 import { Chip } from "../components/Chip";
+import MeImage from "../public/Me.png";
+import Background from "../public/homeBackground.jpg";
 
 export default function Home() {
   const parallax = useParallax<HTMLDivElement>({
@@ -21,7 +23,7 @@ export default function Home() {
         <div className="absolute top-0 left-0 w-full h-full object-cover blur-sm">
           <Image
             className="object-cover"
-            src="/homeBackground.jpg"
+            src={Background}
             fill
             alt="Background"
             priority
@@ -33,7 +35,7 @@ export default function Home() {
         >
           <Image
             className="flex-[2] max-h-80 relative z-1"
-            src="/Me.png"
+            src={MeImage}
             style={{
               objectFit: "contain",
             }}
