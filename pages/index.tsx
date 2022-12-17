@@ -91,6 +91,7 @@ const StackSection = () => {
     <>
       <section className="relative overflow-hidden">
         <BlobAnimation />
+        <Blob2 />
         <div className="relative overflow-hidden min-h-[450px] mt-20 z-[2] p-5 sm:p-10">
           <Card className="m-auto">
             <div className="meDrawingContainer my-[60px] ">
@@ -154,4 +155,8 @@ const StackSection = () => {
 
 const BlobAnimation = () => {
   return <div className={styles.animatedBlob}></div>;
+};
+
+const Blob2 = () => {
+  return <div className={styles.animatedBlob2}></div>;
 };

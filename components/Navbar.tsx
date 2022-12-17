@@ -53,6 +53,7 @@ export const Navbar = () => {
               return (
                 <li>
                   <a
+                    key={index + "-mobile"}
                     href=""
                     onClick={(e) => {
                       e.preventDefault();
@@ -78,6 +79,7 @@ export const Navbar = () => {
                 <li>
                   <a
                     href=""
+                    key={index + "-desktop"}
                     onClick={(e) => {
                       e.preventDefault();
                       router.push(route.path);
