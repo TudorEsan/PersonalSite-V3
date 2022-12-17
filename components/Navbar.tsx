@@ -51,9 +51,9 @@ export const Navbar = () => {
           <ul className="flex flex-col p-4 bg-inherit rounded-lg">
             {routes.map((route, index) => {
               return (
-                <li>
+                <li key={index + "-mobile"}>
                   <a
-                    key={index + "-mobile"}
+                    
                     href=""
                     onClick={(e) => {
                       e.preventDefault();
@@ -76,10 +76,10 @@ export const Navbar = () => {
           <ul className="flex flex-col p-4 mt-4 border bg-inherit rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0  ">
             {routes.map((route, index) => {
               return (
-                <li>
+                <li key={index + "-desktop"}>
                   <a
                     href=""
-                    key={index + "-desktop"}
+                    
                     onClick={(e) => {
                       e.preventDefault();
                       router.push(route.path);
