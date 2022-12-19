@@ -9,7 +9,10 @@ export const Layout = ({ children }: Props) => {
   return (
     <>
       <Navbar />
-      <main className="bg-darkBlue">{children}</main>
+
+      <main className="bg-darkBlue">
+        <div className="mt-20">{children}</div>
+      </main>
     </>
   );
 };

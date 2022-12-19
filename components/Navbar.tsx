@@ -15,7 +15,7 @@ export const Navbar = () => {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <nav className="backdrop-blur-lg	 border-gray-900 fixed z-50 w-screen px-2 sm:px-4 py-2.5 bg-darkBlue/95 ">
+    <nav className="backdrop-blur-lg	 border-gray-900 fixed z-50 w-screen px-2 sm:px-4 py-2.5 bg-darkBlue/95 top-0 right-0 ">
       <div className="container flex flex-wrap items-center justify-between mx-auto">
         <a href="https://flowbite.com/" className="flex items-center">
           <Image src={Logo} className="h-6 mr-3 sm:h-9" alt="Tudor Esan Logo" />
@@ -58,6 +58,7 @@ export const Navbar = () => {
                     onClick={(e) => {
                       e.preventDefault();
                       router.push(route.path);
+                      setSelected(index);
                     }}
                     className={
                       "block py-2 pl-3 pr-4 rounded md:bg-transparent  md:p-0 dark " +
@@ -83,6 +84,7 @@ export const Navbar = () => {
                     onClick={(e) => {
                       e.preventDefault();
                       router.push(route.path);
+                      setSelected(index);
                     }}
                     className={
                       "block py-2 pl-3 pr-4 rounded md:bg-transparent  md:p-0 dark " +
